@@ -1,0 +1,8 @@
+services:
+  vue-builder:
+    build:
+      context: .
+      target: vue-build
+    container_name: '<<APP_NAME>>-vue-builder'
+    volumes:
+      - ./vue:/app

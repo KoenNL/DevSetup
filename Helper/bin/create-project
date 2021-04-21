@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+echo 'What is your username on your host machine?'
+read username
+
+useradd "$username"
+su -c "./bin/console create-project" "$username"

@@ -1,0 +1,17 @@
+services:
+  webserver:
+    build:
+      context: .
+      target: development
+    container_name: '<<APP_NAME>>-webserver'
+    expose:
+      - '9003'
+    ports:
+      - '80:80'
+    volumes:
+      - ./app:/var/www/app
+    links:
+      - database
+    environment:
+      XDEBUG_CONFIG: "xdebug.client_host=host.docker.internal"
+      PHP_IDE_CONFIG: "serverName=docker"

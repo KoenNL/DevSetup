@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  setup:
+    build:
+      context: .
+    container_name: 'dev-setup'
+    volumes:
+      - ./Helper:/var/www/app
+#    entrypoint: bin/console/create-project

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/Helper/vendor/composer" />
+      <path value="$PROJECT_DIR$/Helper/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/Helper/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/Helper/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/Helper/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/Helper/vendor/symfony/http-kernel" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
+</project>
