@@ -7,7 +7,7 @@ class Dockerfile
 {
 
     private string $imageName;
-    private string $contents;
+    private string $contents = '';
     private string $appName;
 
     public function __construct(string $imageName, string $appName)

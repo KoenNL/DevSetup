@@ -7,17 +7,13 @@ class ProjectSettings
 {
     private string $projectName;
     private string $hostname;
-    private bool $needsDatabase;
-    private bool $needsVue;
     private string $tempPath;
     private string $outputPath;
 
-    public function __construct(string $projectName, string $hostname, bool $needsDatabase, bool $needsVue)
+    public function __construct(string $projectName, string $hostname)
     {
         $this->projectName = $projectName;
         $this->hostname = $hostname;
-        $this->needsDatabase = $needsDatabase;
-        $this->needsVue = $needsVue;
     }
 
     public function getProjectName(): string
@@ -28,16 +24,6 @@ class ProjectSettings
     public function getHostname(): string
     {
         return $this->hostname;
-    }
-
-    public function needsDatabase(): bool
-    {
-        return $this->needsDatabase;
-    }
-
-    public function needsVue(): bool
-    {
-        return $this->needsVue;
     }
 
     public function getTempPath(): ?string

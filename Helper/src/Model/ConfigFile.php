@@ -8,7 +8,7 @@ class ConfigFile
 
     private string $fileName;
     private string $filePath;
-    private string $contents;
+    private string $contents = '';
 
     public function __construct(string $fileName, string $filePath)
     {

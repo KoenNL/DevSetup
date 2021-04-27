@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-use App\ConfigCreator\FilePath;
+use App\Model\FilePath;
 use Symfony\Component\Filesystem\Filesystem;
 
 class GetDockerfileContents

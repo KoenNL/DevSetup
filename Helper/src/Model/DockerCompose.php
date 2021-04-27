@@ -8,8 +8,8 @@ class DockerCompose
 
     private string $serviceName;
     private string $appName;
-    private array $volumes;
-    private array $serviceContents;
+    private array $volumes = [];
+    private array $serviceContents = [];
 
     public function __construct(string $serviceName, string $appName)
     {
@@ -48,6 +48,4 @@ class DockerCompose
         $this->serviceContents = $serviceContents;
         return $this;
     }
-
-
 }

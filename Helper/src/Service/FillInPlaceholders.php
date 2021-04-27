@@ -27,7 +27,7 @@ class FillInPlaceholders
         foreach ($source as $index => $item) {
             if (is_array($item)) {
                 $source[$index] = $this->fillInRecursive($item, $arguments);
-            } else {
+            } elseif (is_string($item)) {
                 $source[$index] = $this->fillIn($item, $arguments);
             }
         }
