@@ -7,4 +7,3 @@ services:
     container_name: 'dev-setup'
     volumes:
       - ./Helper:/var/www/app
-    entrypoint: bin/create-project
