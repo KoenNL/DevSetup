@@ -6,3 +6,4 @@ services:
     container_name: '<<APP_NAME>>-vue-builder'
     volumes:
       - ./vue:/app
+      - ./app/public/:/app/dist/
