@@ -71,7 +71,7 @@ class Installer
             $configFiles = $recipe->createConfigFiles($projectSettings);
             if ($configFiles !== null) {
                 foreach ($configFiles as $configFile) {
-                    $filePath = $projectSettings->getTempPath() . 'config/' . $configFile->getFilePath();
+                    $filePath = $projectSettings->getTempPath() . $configFile->getFilePath();
                     if (!$this->filesystem->exists($filePath)) {
                         $this->filesystem->mkdir($filePath);
                     }
@@ -107,5 +107,6 @@ class Installer
         }
 
         $this->filesystem->mirror($projectSettings->getTempPath(), $projectSettings->getOutputPath());
+        $this->filesystem->chmod($projectSettings->getOutputPath(), 0755, recursive: true);
     }
 }

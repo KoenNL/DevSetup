@@ -6,6 +6,7 @@ namespace App\Recipe;
 use App\Recipe\Database\Mariadb104;
 use App\Recipe\Frontend\Vuejs;
 use App\Recipe\Webserver\ApachePhp74Symfony;
+use App\Recipe\Webserver\ApachePhp80Symfony;
 
 class GetAvailableRecipes
 {
@@ -14,9 +15,13 @@ class GetAvailableRecipes
     private array $availableDatabaseRecipes;
     private array $availableFrontendRecipes;
 
-    public function __construct(ApachePhp74Symfony $apachePhp74Symfony, Mariadb104 $mariadb104, Vuejs $vuejs)
-    {
-        $this->availableWebserverRecipes = [$apachePhp74Symfony];
+    public function __construct(
+        ApachePhp74Symfony $apachePhp74Symfony,
+        ApachePhp80Symfony $apachePhp80Symfony,
+        Mariadb104 $mariadb104,
+        Vuejs $vuejs
+    ) {
+        $this->availableWebserverRecipes = [$apachePhp74Symfony, $apachePhp80Symfony];
         $this->availableDatabaseRecipes = [$mariadb104];
         $this->availableFrontendRecipes = [$vuejs];
     }

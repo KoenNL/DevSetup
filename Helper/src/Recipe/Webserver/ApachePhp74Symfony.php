@@ -54,7 +54,7 @@ class ApachePhp74Symfony implements RecipeInterface
         return [
             $this->createConfigFile->createConfigFile(
                 'app.conf',
-                '/etc/apache2/sites-enabled',
+                '/config/etc/apache2/sites-enabled',
                 'Apache-php74-symfony/app.conf',
                 ['HOSTNAME' => $projectSettings->getHostname()]
             ),

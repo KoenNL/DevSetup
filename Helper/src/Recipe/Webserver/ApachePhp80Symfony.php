@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Recipe\Frontend;
+namespace App\Recipe\Webserver;
 
 use App\Model\DockerCompose;
 use App\Model\Dockerfile;
@@ -11,7 +11,7 @@ use App\Service\CreateConfigFile;
 use App\Service\CreateDockerCompose;
 use App\Service\CreateDockerfile;
 
-class Vuejs implements RecipeInterface
+class ApachePhp80Symfony implements RecipeInterface
 {
 
     private CreateDockerfile $createDockerfile;
@@ -22,7 +22,8 @@ class Vuejs implements RecipeInterface
         CreateDockerfile $createDockerfile,
         CreateDockerCompose $createDockerCompose,
         CreateConfigFile $createConfigFile
-    ) {
+    )
+    {
         $this->createDockerfile = $createDockerfile;
         $this->createDockerCompose = $createDockerCompose;
         $this->createConfigFile = $createConfigFile;
@@ -30,23 +31,19 @@ class Vuejs implements RecipeInterface
 
     public function getName(): string
     {
-        return 'VueJS';
+        return 'Apache, PHP 8.0, Symfony 5';
     }
 
     public function createDockerfile(ProjectSettings $projectSettings): ?Dockerfile
     {
-        return $this->createDockerfile->createDockerfile(
-            'vue-builder',
-            'Vuejs.Dockerfile',
-            $projectSettings
-        );
+        return $this->createDockerfile->createDockerfile('webserver', 'Apache-php80-symfony.Dockerfile', $projectSettings);
     }
 
     public function createDockerCompose(ProjectSettings $projectSettings): ?DockerCompose
     {
         return $this->createDockerCompose->createDockerCompose(
-            'vue-builder',
-            'Vuejs.yml',
+            'webserver',
+            'Apache-php80-symfony.yml',
             $projectSettings,
             ['APP_NAME' => $projectSettings->getProjectName()]
         );
@@ -56,19 +53,21 @@ class Vuejs implements RecipeInterface
     {
         return [
             $this->createConfigFile->createConfigFile(
-                'package.json',
-                '/vue',
-                'Vuejs/package.json',
-                ['NAME' => strtolower($projectSettings->getProjectName())]
+                'app.conf',
+                '/config/etc/apache2/sites-enabled',
+                'Apache-php80-symfony/app.conf',
+                ['HOSTNAME' => $projectSettings->getHostname()]
+            ),
+            $this->createConfigFile->createConfigFile(
+                'php.ini',
+                '/etc/apache2/sites-enabled',
+                'Apache-php80-symfony/php.ini'
             ),
         ];
     }
 
     public function getCommands(ProjectSettings $projectSettings): ?array
     {
-        return [
-            'mkdir ' . $projectSettings->getTempPath() . '/vue/src',
-            'mkdir ' . $projectSettings->getTempPath() . '/vue/dist',
-        ];
+        return ['composer create-project symfony/skeleton ' . $projectSettings->getTempPath() . '/app -q'];
     }
 }
