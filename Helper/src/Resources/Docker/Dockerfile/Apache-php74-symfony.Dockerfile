@@ -15,7 +15,7 @@ RUN docker-php-ext-install pdo_mysql
 RUN a2enmod rewrite headers
 
 # Copy source files and config files to image.
-COPY ./admin/app/ .
+COPY ./app/ .
 COPY ./config/ /
 
 # Composer

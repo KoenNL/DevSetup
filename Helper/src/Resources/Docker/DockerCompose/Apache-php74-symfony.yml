@@ -2,7 +2,7 @@ services:
   webserver:
     build:
       context: .
-      target: development
+      target: app
     container_name: '<<APP_NAME>>-webserver'
     expose:
       - '9003'
