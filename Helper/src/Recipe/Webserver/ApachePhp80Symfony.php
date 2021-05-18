@@ -60,7 +60,7 @@ class ApachePhp80Symfony implements RecipeInterface
             ),
             $this->createConfigFile->createConfigFile(
                 'php.ini',
-                '/config/etc/apache2/sites-enabled',
+                '/config/usr/local/etc/php',
                 'Apache-php80-symfony/php.ini'
             ),
         ];
