@@ -60,7 +60,7 @@ class ApachePhp74Symfony implements RecipeInterface
             ),
             $this->createConfigFile->createConfigFile(
                 'php.ini',
-                '/etc/apache2/sites-enabled',
+                '/config/etc/apache2/sites-enabled',
                 'Apache-php74-symfony/php.ini'
             ),
         ];
