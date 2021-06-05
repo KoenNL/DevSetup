@@ -71,7 +71,8 @@ class ApachePhp80Symfony implements RecipeInterface
         return [
             'composer create-project symfony/skeleton ' . $projectSettings->getTempPath() . '/app -q',
             'composer require --dev symfony/maker-bundle ' . $projectSettings->getTempPath() . '/app -q',
-            'rm -rf ' . $projectSettings->getTempPath() .'/vendor',
+            'rm -rf ' . $projectSettings->getTempPath() .'/app/var',
+            'rm -rf ' . $projectSettings->getTempPath() .'/app/vendor',
         ];
     }
 }
