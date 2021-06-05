@@ -83,7 +83,7 @@ class Vuejs implements RecipeInterface
             ),
             $this->createConfigFile->createConfigFile(
                 '.env',
-                '/vue/src',
+                '/vue',
                 'Vuejs/.env',
                 ['NAME' => $projectSettings->getProjectName()]
             ),
