@@ -61,6 +61,31 @@ class Vuejs implements RecipeInterface
                 'Vuejs/package.json',
                 ['NAME' => strtolower($projectSettings->getProjectName())]
             ),
+            $this->createConfigFile->createConfigFile(
+                'main.js',
+                '/vue/src',
+                'Vuejs/main.js'
+            ),
+            $this->createConfigFile->createConfigFile(
+                'App.vue',
+                '/vue/src',
+                'Vuejs/App.vue',
+            ),
+            $this->createConfigFile->createConfigFile(
+                'index.js',
+                '/vue/src/router',
+                'Vuejs/index.js',
+            ),
+            $this->createConfigFile->createConfigFile(
+                '.gitignore',
+                '/vue',
+                'Vuejs/.gitignore'
+            ),
+            $this->createConfigFile->createConfigFile(
+                '.htaccess',
+                '/app/public',
+                'Vuejs/.htaccess'
+            ),
         ];
     }
 
