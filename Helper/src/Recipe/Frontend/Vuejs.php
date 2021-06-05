@@ -82,6 +82,12 @@ class Vuejs implements RecipeInterface
                 'Vuejs/.gitignore'
             ),
             $this->createConfigFile->createConfigFile(
+                '.env',
+                '/vue/src',
+                'Vuejs/.env',
+                ['NAME' => $projectSettings->getProjectName()]
+            ),
+            $this->createConfigFile->createConfigFile(
                 '.htaccess',
                 '/app/public',
                 'Vuejs/.htaccess'
