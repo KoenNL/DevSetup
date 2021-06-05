@@ -68,6 +68,10 @@ class ApachePhp74Symfony implements RecipeInterface
 
     public function getCommands(ProjectSettings $projectSettings): ?array
     {
-        return ['composer create-project symfony/skeleton ' . $projectSettings->getTempPath() . '/app -q'];
+        return [
+            'composer create-project symfony/skeleton ' . $projectSettings->getTempPath() . '/app -q',
+            'composer require --dev symfony/maker-bundle ' . $projectSettings->getTempPath() . '/app -q',
+            'rm -rf ' . $projectSettings->getTempPath() .'/vendor',
+        ];
     }
 }
