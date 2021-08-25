@@ -79,16 +79,18 @@ class CreateProject extends Command
 
         $projectSettings = new ProjectSettings($projectName, $hostname);
 
+        $recipes = [$this->getAvailableRecipes->getByClassName($webserverRecipeClassName)];
+
+        if ($databaseRecipeName !== 'None') {
+            $recipes[] = $this->getAvailableRecipes->getByClassName($databaseRecipeClassName);
+        }
+        if ($frontendRecipeName !== 'None') {
+            $recipes[] = $this->getAvailableRecipes->getByClassName($frontendRecipeClassName);
+        }
+
         try {
             $output->writeln('Installing...');
-            $this->installer->installFromRecipes(
-                $projectSettings,
-                [
-                    $this->getAvailableRecipes->getByClassName($webserverRecipeClassName),
-                    $this->getAvailableRecipes->getByClassName($databaseRecipeClassName),
-                    $this->getAvailableRecipes->getByClassName($frontendRecipeClassName),
-                ]
-            );
+            $this->installer->installFromRecipes($projectSettings, $recipes);
             $output->writeln('Finalizing...');
             $this->installer->finalize($projectSettings);
         } catch (\Exception $exception) {
